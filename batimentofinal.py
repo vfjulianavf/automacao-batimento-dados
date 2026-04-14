@@ -103,8 +103,8 @@ WITH base_unificada AS (
         MAX(b.no_formulario) AS no_formulario,
         b.no_status_ocorrencia,
         CAST(a.nr_demanda_bacen AS STRING) AS protocolo_externo
-    FROM ref_cli.tb_gta_bacen_api a
-    LEFT JOIN ref_cli.tb_gta_protocolo b ON b.sq_ocorrencia = a.sq_ocorrencia
+    FROM database.tb_gta_bacen_api a
+    LEFT JOIN database.tb_gta_protocolo b ON b.sq_ocorrencia = a.sq_ocorrencia
     WHERE 1=1
         {date_filter}
         -- Corrigido: Comparamos número com número
